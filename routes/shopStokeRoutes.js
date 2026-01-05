@@ -1,6 +1,6 @@
     const express = require("express");
     const router = express.Router();
-    const shopController = require("../controllers/shopStokeController");
+    const shopController = require("../controllers/ShopStokeController");
     const protect = require("../middleware/authMiddleware");
 
     // 🔐 All routes protected
