@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 
 
 
-const authRoutes = require("./routes/authROutes");
+const authRoutes = require("./routes/authRoutes");
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
