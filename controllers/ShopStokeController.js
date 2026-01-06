@@ -62,14 +62,14 @@ exports.delete = async (req, res, next) => {
 // ✅ Search records (user-specific)
 exports.search = async (req, res, next) => {
   try {
-    const q = req.query.q || "";
-    const results = await ShopStoke.find({
-      user: req.user.id,
+    const q = req.query.q || '';
+    const results = await Report.find({
       $or: [
-        { shopNo: { $regex: q, $options: "i" } },
-        { pandiName: { $regex: q, $options: "i" } },
-        { volumeNo: { $regex: q, $options: "i" } },
-      ],
+        {shopNo: { $regex: q, $options: 'i' } },
+
+        {pandiName: { $regex: q, $options: 'i' } },
+        {volumeNo: { $regex: q, $options: 'i' } }
+      ]
     });
     res.json({ success: true, data: results });
   } catch (err) {
