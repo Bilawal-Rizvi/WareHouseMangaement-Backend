@@ -19,12 +19,15 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: "http://localhost:5000", // React ka URL
-    origin: "https://ware-house-mangaement-frontend.vercel.app", // React ka URL
+    origin: [
+      "http://localhost:5173",
+      "https://ware-house-mangaement-frontend.vercel.app",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true, // agar cookies bhejni hain
+    credentials: true,
   })
 );
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
