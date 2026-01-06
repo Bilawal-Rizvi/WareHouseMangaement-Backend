@@ -63,10 +63,9 @@ exports.delete = async (req, res, next) => {
 exports.search = async (req, res, next) => {
   try {
     const q = req.query.q || '';
-    const results = await Report.find({
+    const results = await ShopStoke.find({
       $or: [
         {shopNo: { $regex: q, $options: 'i' } },
-
         {pandiName: { $regex: q, $options: 'i' } },
         {volumeNo: { $regex: q, $options: 'i' } }
       ]
