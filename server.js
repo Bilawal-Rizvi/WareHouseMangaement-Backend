@@ -17,7 +17,14 @@ connectDB();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173", // React ka URL
+    origin: "https://ware-house-mangaement-frontend.vercel.app", // React ka URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true, // agar cookies bhejni hain
+  })
+);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
