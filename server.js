@@ -19,7 +19,11 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: 'https://ware-house-mangaement-frontend-ku3gnnbm4.vercel.app',
+  origin: [
+    /\.vercel\.app$/,
+    'http://localhost:3000',
+    'http://localhost:5173',
+  ],
   credentials: true
 }));
 app.use(bodyParser.json());
